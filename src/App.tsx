@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react'
+import { Router } from '@reach/router'
+import NavContext from './NavContext'
+import Banner from './components/Banner'
 
 const App: React.FC = () => {
+  const links = useContext(NavContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div role="banner">
+        <Banner links={links} />
+      </div>
+      <div role="main" id="main-content" className="flex-shrink-0 pt-3">
+        <Router>
+          {links.map(({ component: Tag, ...props }) => (
+            <Tag key={props.path} {...props} />
+          ))}
+        </Router>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

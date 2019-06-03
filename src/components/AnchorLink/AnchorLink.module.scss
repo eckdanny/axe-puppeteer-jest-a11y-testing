@@ -1,0 +1,6 @@
+@import '../../scss/base';
+
+.Link {
+  margin-left: map-get($spacers, 2);
+  color: $gray-600;
+}

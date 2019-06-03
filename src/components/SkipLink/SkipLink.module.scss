@@ -1,0 +1,18 @@
+@import '../../scss/base';
+
+.SkipLink {
+  background-color: $primary;
+  color: $white;
+  left: -99999px;
+  padding: map-get($spacers, 3);
+  position: fixed !important;
+  text-decoration: none;
+  z-index: $zindex-skip-link;
+}
+.SkipLink:focus,
+.SkipLink:active {
+  left: 0;
+  &:hover {
+    color: $white;
+  }
+}
