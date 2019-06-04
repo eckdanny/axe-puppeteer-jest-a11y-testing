@@ -1,9 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import App from './App'
+import { render, cleanup } from '@testing-library/react'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App', () => {
+  afterEach(cleanup)
+  it('renders a banner landmark', () => {
+    const thing = render(<App />)
+    expect(thing.queryByRole('banner')).toBeTruthy()
+  })
+  it('renders a main landmark', () => {
+    const thing = render(<App />)
+    expect(thing.queryByRole('main')).toBeDefined()
+  })
+})
