@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4bffbc2f-63ff-4a09-93a8-b1c92e84f6a1/deploy-status)](https://app.netlify.com/sites/axe-puppeteer-jest-a11y-testing/deploys)
+
 Demonstrative demo for using `axe` with `puppeteer` + `jest` and keeping humans focused on _usability_, not manual audits and remediation.
 
 <p align='center'>
