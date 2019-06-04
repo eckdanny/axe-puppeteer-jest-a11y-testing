@@ -1,2 +1,9 @@
 @import 'base';
 @import '~bootstrap/scss/bootstrap';
+
+// https://github.com/twbs/bootstrap/pull/28814
+@if $enable-validation-icons {
+  .form-control.form-control {
+    background-position: right $input-height-inner-quarter center;
+  }
+}
