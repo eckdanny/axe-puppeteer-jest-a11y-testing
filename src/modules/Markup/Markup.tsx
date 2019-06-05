@@ -30,6 +30,11 @@ const Markup: React.FC = () => {
           <li> {DupeId} </li>
           <li> {DupeId} </li>
         </ul>
+        <p>
+          It can be easy to introduce bugs like this in component-oriented
+          architectures. Good news: it is also easy to catch bugs like this in
+          integration tests.
+        </p>
       </section>
 
       <section>
@@ -51,8 +56,10 @@ const Markup: React.FC = () => {
           More Simple AST-based Validations
         </AnchorLink>
         <p>
-          shallow trees, associations between sibling elements, single
-          elements...
+          Many a11y nits possibly present in shallow DOM trees, sibling element
+          associations, or even single DOM nodes can be easily identified. Doing
+          so too early may not be worth it however, since you should be
+          validating production distribution artifacts above components.
         </p>
 
         <section>
@@ -77,11 +84,13 @@ const Markup: React.FC = () => {
           <AnchorLink id="label-form-control-associations" tag="h4">
             Example: Label & FormControl Associations
           </AnchorLink>
-          <p>...</p>
+          <p>
+            Some popular linters are oppinionated about how this should be done
+          </p>
           <div className="card">
             <div className="card-body">
               <form>
-                <div className="form-group mb-0">
+                <div className="form-group">
                   <label>Favorite Color:</label>
                   <input
                     type="text"
@@ -89,7 +98,36 @@ const Markup: React.FC = () => {
                     className="form-control"
                   />
                   <small className="form-text text-muted">
-                    No wait! <em>Yellow...</em>
+                    No wait! <em>Yellooooow...</em>
+                  </small>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="color-2">
+                    Favorite Color{' '}
+                    <small className="text-muted">(associated by id)</small>:
+                  </label>
+                  <input
+                    id="color-2"
+                    type="text"
+                    placeholder="Blue..."
+                    className="form-control"
+                  />
+                  <small className="form-text text-muted">
+                    Assume European Swallow
+                  </small>
+                </div>
+                <div className="form-group mb-0">
+                  <label className="mb-0 w-100">
+                    Favorite Color{' '}
+                    <small className="text-muted">(wrapped)</small>:
+                    <input
+                      type="text"
+                      placeholder="Blue..."
+                      className="form-control mt-2"
+                    />
+                  </label>
+                  <small className="form-text text-muted">
+                    Ni! Peng! Nooo-wom!
                   </small>
                 </div>
               </form>

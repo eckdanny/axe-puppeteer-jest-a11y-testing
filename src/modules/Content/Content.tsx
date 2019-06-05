@@ -56,7 +56,11 @@ const SomeContent: React.FC<SomeContentProps> = () => {
         <AnchorLink id="skip-links" tag="h3">
           Skip Links
         </AnchorLink>
-        <p>An immensely helpful feature for keyboard-assisted users.</p>
+        <p>
+          An immensely helpful feature for keyboard-assisted users. If you're
+          shipping page-level templates or components, this feature can be an
+          opaque interface to your consumers.
+        </p>
       </section>
 
       <section>
@@ -68,7 +72,8 @@ const SomeContent: React.FC<SomeContentProps> = () => {
           Route change events should place focus in active <em>shell</em>{' '}
           (either by declarative or imperative methods). With{' '}
           <code>reach-ui/router</code>, its done for you. Have you noticed this
-          feature in action?
+          feature in action? If your program/project is consistent with a
+          client-side routing solution, this can be another opaque feature.
         </p>
       </section>
     </div>
