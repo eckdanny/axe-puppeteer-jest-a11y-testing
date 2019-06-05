@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <div role="banner">
         <Banner links={links} />
       </div>
-      <div role="main" id="main-content" className="flex-shrink-0 pt-3">
+      <div role="main" id="main-content" className="flex-shrink-0 py-3">
         <Router>
           {links.map(({ component: Tag, ...props }) => (
             <Tag key={props.path} {...props} />
